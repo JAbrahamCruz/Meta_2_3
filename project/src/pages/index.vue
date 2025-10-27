@@ -20,7 +20,8 @@
 
         <MovieList v-if="movies.length > 0" :movies="movies" @select-movie="handleMovieSelect" />
 
-        <MovieDetails v-if="selectedMovie" :movie="selectedMovie" @close-details="handleCloseDetails" />
+        <MovieDetails v-if="selectedMovie" :visible="!!selectedMovie" :movie="selectedMovie"
+          @close-details="handleCloseDetails" />
 
         <v-alert v-if="error" type="error" class="mt-4">
           {{ error }}
@@ -89,7 +90,7 @@ const handleClear = () => {
 </script>
 
 <style scoped>
-* {
+/* * {
   border: 1px solid;
-}
+} */
 </style>
